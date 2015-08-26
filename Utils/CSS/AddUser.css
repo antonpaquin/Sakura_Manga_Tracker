@@ -1,0 +1,31 @@
+body {
+  background: #1A1A1A;
+  width: 100%;
+}
+
+img, input, h1 {
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+input {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 15%;
+  color: #E3E3E3
+}
+
+img {
+  background-image: url("/Utils/add.png");
+  background-size: 150px 150px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type='file'] {
+  display: none;
+}

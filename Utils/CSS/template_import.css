@@ -1,0 +1,48 @@
+body {
+  background: #1A1A1A;
+}
+
+.inputDiv *, .submitDiv *, .imageDiv * {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.inputDiv {
+  height: 20%;
+  width: 100%;
+}
+
+.imageDiv {
+  height: 45%;
+}
+
+.submitDiv {
+  height: 10%;
+}
+
+input{
+  width: 250px;
+  display: block;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+div * {
+  display: block;
+  text-align: center;
+}
+
+h1, p, label{
+  color: #E3E3E3;
+  margin-bottom: 10px !important;
+}
+
+img {
+  background-image: url("/Utils/add.png");
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}

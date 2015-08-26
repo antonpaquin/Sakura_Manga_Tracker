@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="Users/#user#/CSS/import.css"/>
+  </head>
+	<body>
+		<form action="settings.py?page=importp" method="post" id="form" enctype="multipart/form-data">
+
+      <div class="inputDiv">
+  			<h1>Manga Name</h1>
+        <p>Letters, numbers, and spaces</p>
+        <input type="text" name="name">
+      </div>
+
+      <div class="inputDiv">
+  			<h1>Initial Link</h1>
+        <p>First page to grab from batoto</p>
+        <input type="text" name="link">
+      </div>
+
+      <div class="imageDiv">
+  			<h1>Cover</h1>
+        <p>png</p>
+        <input type="file" name="cover" id="cover" onchange="loadFile(event)" class="hidden">
+        <img width="252" height="299" id="preview" onclick="document.getElementById('cover').click()">
+      </div>
+
+      <div class="submitDiv">
+        <input type="submit">
+      </div>
+		</form>
+    <script>
+      var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+          var output = document.getElementById('preview');
+          output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      };
+    </script>
+	</body>
+</html>

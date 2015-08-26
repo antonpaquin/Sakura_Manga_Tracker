@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="Utils/CSS/AddUser.css"/>
+  </head>
+	<body>
+    <h1>Add Profile</h1>
+		<form action="settings.py?page=useraddp" method="post" id="form" enctype="multipart/form-data">
+      <input type="file" name="image" class="hidden" onchange="loadFile(event)" id="imageFile">
+      <img width="200" height="200" id="preview" onclick="document.getElementById('imageFile').click()">
+      <input type="text" name="name">
+      <input type="submit">
+    </form>
+    <script>
+      var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+          var output = document.getElementById('preview');
+          output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body {
+	background-color: #444444;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	text-align: center;
+}
+
+img {
+	max-width: 100%;
+}

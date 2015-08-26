@@ -1,0 +1,41 @@
+table {
+	border-spacing: 10px;
+	border: 10px solid #000000
+	background-color: #FFFFFF;
+	margin-left:0px;
+	margin-top: 0px;
+}
+
+body {
+	background-color: #000000;
+	margin-left:0px;
+	margin-top: 0px;
+}
+
+tr {
+	height: 299px;
+	margin-left:0px;
+	margin-top: 0px;
+}
+
+td {
+	background-color: #000000;
+	border: 3px solid #888888;
+	width: 252px;
+	height: 299px;
+	margin-left:0px;
+	margin-top: 0px;
+}
+
+.updated {
+	border: 3px solid red;
+}
+
+.settings {
+	width: 40px;
+	height: 40px;
+	display: block;
+	margin: auto;
+	margin-top: 100px;
+	opacity: 0.2;
+}

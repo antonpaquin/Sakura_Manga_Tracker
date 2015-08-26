@@ -1,0 +1,38 @@
+body {
+  background: #1A1A1A
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 2px solid #E3E3E3;
+}
+
+p, a{
+  color: #E3E3E3;
+  font-size: 28;
+  margin: auto;
+  margin-left: 20px;
+  display: block;
+}
+
+a {
+  display: inline;
+  margin-left: 25%;
+}
+
+.title {
+  width: 100%;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,12 @@
+body {
+  background: #1A1A1A;
+  margin-top: 20%;
+}
+
+p, a {
+  text-align: center;
+  font-size: 28;
+  color: #E3E3E3;
+  display: block;
+  margin-top: 30px;
+}
