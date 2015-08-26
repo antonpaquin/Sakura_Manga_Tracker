@@ -3,6 +3,8 @@ Grabs manga from Batoto, and stuffs it into a nice HTML wrapper.
 
 <h1>What is this?</h1>
 <p>It's a bunch of python that will automatically download manga from batoto and put it into a nice easily-readable format.
+<p>Currently only Batoto scraping is supported, more may be in the works eventually.
+<p>If you dump a bunch of images following the directory structure, the display half should still work on its own.
 
 <h1>How do I make it work?</h1>
 <p>First, you need python. I've done all my testing and development on 3.4, so that's the ideal version to run it under.
