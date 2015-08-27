@@ -1,5 +1,6 @@
 #!C:\Python34\pythonw.exe
 import os
+import json
 
 def run():
     print('Content-type: text/html\n')
@@ -22,6 +23,8 @@ def run():
     if 'page' in params:
         if params['page'] == 'user':
             showUserSwap()
+        elif params['page'] == 'updates':
+            giveUpdates(user)
         return
 
     showGrid(user)
@@ -51,28 +54,13 @@ def showGrid(user):
         append = append.replace('#updated#',checkUpdated(user, item))
         append = append.replace('#link#','comic.py?comic='+item+'&page='+str(updated[item]))
         append = append.replace('#cover#','Pages/' + item + '/cover.png')
+        append = append.replace('#comic#',item)
         grid += append
     grid += '</tr>'
 
     base = base.replace('#grid#',grid)
     base = base.replace('#user#',user)
     print(base)
-
-updated = {}
-def checkUpdated(user, comic):
-    if not updated:
-        with open('Users/'+user+'/seen.conf') as seen_f:
-            for line in seen_f.readlines():
-                s = line.split('=')
-                updated[s[0]]=int(s[1])
-    if comic not in updated:
-        updated[comic] = 1
-        return 'updated'
-    comic_position = int(os.listdir('Pages/'+comic+'/Data')[-1].split('.')[0])
-    if comic_position > updated[comic]:
-        return 'updated'
-    else:
-        return ''
 
 def showUserSwap():
     users_l = os.listdir('Users')
@@ -90,6 +78,33 @@ def showUserSwap():
             users += user_h.replace('#user#',user)
         base = base.replace('#users#',users)
         print(base)
+
+def giveUpdates(user):
+    res = {}
+    if not updated:
+        with open('Users/'+user+'/seen.conf') as seen_f:
+            for line in seen_f.readlines():
+                s = line.split('=')
+                updated[s[0]]=int(s[1])
+    for obj in updated:
+        res[obj] = checkUpdated(user, obj)
+    print(json.dumps(res))
+
+updated = {}
+def checkUpdated(user, comic):
+    if not updated:
+        with open('Users/'+user+'/seen.conf') as seen_f:
+            for line in seen_f.readlines():
+                s = line.split('=')
+                updated[s[0]]=int(s[1])
+    if comic not in updated:
+        updated[comic] = 1
+        return 'updated'
+    comic_position = int(os.listdir('Pages/'+comic+'/Data')[-1].split('.')[0])
+    if comic_position > updated[comic]:
+        return 'updated'
+    else:
+        return ''
 
 def get_user(cookie):
     cookies = cookie.split('; ')
