@@ -27,6 +27,11 @@ td {
 	margin-top: 0px;
 }
 
+img {
+	width: 252px;
+	height: 299px;
+}
+
 .updated {
 	border: 3px solid red;
 }

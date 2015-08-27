@@ -24,6 +24,11 @@ a {
   margin-left: 25%;
 }
 
+img {
+  width: 252px;
+  height: 299px;
+}
+
 .title {
   width: 100%;
 }
